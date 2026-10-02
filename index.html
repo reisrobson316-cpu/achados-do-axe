@@ -210,9 +210,12 @@ h1, h2, h3 { text-wrap: balance; }
 /* ── products section ── */
 .products-section {
   padding-block: 48px 24px;
+}
+.products-inner {
   display: flex;
   flex-direction: column;
   gap: 28px;
+  min-width: 0;
 }
 .section-rule {
   display: flex;
@@ -237,8 +240,10 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
   gap: 18px;
+  min-width: 0;
+  width: 100%;
 }
 .card {
   background: var(--bg-card);
@@ -437,7 +442,7 @@ h1, h2, h3 { text-wrap: balance; }
   .hero-sub { font-size: 16px; }
   .trust-section { padding-block-start: 24px; }
   .products-section { padding-block: 36px 16px; }
-  .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .card-price { font-size: 20px; }
   .cta-content { padding: 20px; }
   .cta-title { font-size: 24px; }
@@ -525,7 +530,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 <!-- Produtos -->
 <section id="ofertas" class="products-section">
-  <div class="wrap" style="display:flex;flex-direction:column;gap:28px;">
+  <div class="wrap products-inner">
     <div class="section-rule"><h2>OFERTAS EM DESTAQUE</h2></div>
     <div class="product-grid">
       
